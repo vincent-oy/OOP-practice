@@ -19,6 +19,10 @@ public class Team {
     public String getName() {
         return name;
     }
+    //Method to update stats after a match
+    public String getRecord() {
+        // "Tigers: 12 points, 15 GF, 8 GA".
+        return String.format("%s: %d points, %d GF, %d GA", name, points, goalsFor, goalsAgainst);
 
     public String getRecord() {
         return String.format("%s: %d points, %d GF, %d GA", name, points, goalsFor, goalsAgainst);
@@ -26,6 +30,7 @@ public class Team {
 
     public void updateStats(Match m) {
         matches.add(m);
+        points += m.homeScore + m.awayScore;
 
         int homeScore = m.getHomeScore();
         int awayScore = m.getAwayScore();
@@ -49,4 +54,3 @@ public class Team {
         }
     }
 }
-

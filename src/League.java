@@ -24,7 +24,9 @@ public class League {
         for (Match match : matches) {
             match.getHomeTeam().updateStats(match);
             match.getAwayTeam().updateStats(match);
-        }
+        for (Match eachMatch : matches) {
+            eachMatch.homeTeam.updateStats(eachMatch);
+            eachMatch.awayTeam.updateStats(eachMatch);        }
     }
 
     public void printStandings() {
@@ -33,4 +35,9 @@ public class League {
         }
     }
 }
+        for (Team eachTeam : teams) {
+            System.out.println(eachTeam.getRecord());
+        }
+    }
 
+}
