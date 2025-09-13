@@ -16,16 +16,15 @@ public class Team {
         this.goalsFor = 0;
         this.goalsAgainst = 0;
     }
-
     //Method to update stats after a match
-    public getRecord(){
+    public String getRecord() {
         // "Tigers: 12 points, 15 GF, 8 GA".
         return String.format("%s: %d points, %d GF, %d GA", name, points, goalsFor, goalsAgainst);
 
     }
 
-    public updateStats(Match m){
-        matches.add(m)
+    public void updateStats(Match m) {
+        matches.add(m);
         points += m.homeScore + m.awayScore;
 
         if (this == m.homeTeam) {
@@ -38,3 +37,4 @@ public class Team {
         }
 
     }
+}

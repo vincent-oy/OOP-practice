@@ -13,24 +13,25 @@ public class League {
         this.matches = new ArrayList<>();
     }
 
-    public addTeam(Team t) {
+    public void addTeam(Team t) {
         teams.add(t);
-   }
+    }
 
-    public scheduleMatch(Match m) {
+    public void scheduleMatch(Match m) {
         matches.add(m);
     }
 
-    public updateStandings() {
+    public void updateStandings() {
         for (Match eachMatch : matches) {
             eachMatch.homeTeam.updateStats(eachMatch);
             eachMatch.awayTeam.updateStats(eachMatch);
         }
     }
 
-    public printStandings() {
+    public void printStandings() {
         for (Team eachTeam : teams) {
             System.out.println(eachTeam.getRecord());
         }
     }
+
 }
