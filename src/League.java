@@ -4,6 +4,7 @@ public class League {
     private String name;
 
     // Worksheet: store all teams in an ArrayList
+    // Using ArrayList directly as requested
     private ArrayList<Team> teams;
 
     // Worksheet: store all matches in an ArrayList
@@ -24,6 +25,10 @@ public class League {
     }
 
     // Worksheet: schedule a match to be played
+    public void addTeam(Team t) {
+        teams.add(t);
+    }
+
     public void scheduleMatch(Match m) {
         matches.add(m);
     }
@@ -44,3 +49,20 @@ public class League {
     }
 }
 
+        for (Match eachMatch : matches) {
+            eachMatch.homeTeam.updateStats(eachMatch);
+            eachMatch.awayTeam.updateStats(eachMatch);        }
+    }
+
+    public void printStandings() {
+        for (Team team : teams) {
+            System.out.println(team.getRecord());
+        }
+    }
+}
+        for (Team eachTeam : teams) {
+            System.out.println(eachTeam.getRecord());
+        }
+    }
+
+}

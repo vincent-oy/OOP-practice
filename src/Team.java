@@ -4,6 +4,7 @@ public class Team {
     private String name;
 
     // Worksheet: track all matches this team has played
+    // List of matches this team has played
     private ArrayList<Match> matches;
 
     // Worksheet: keep running totals for standings
@@ -26,6 +27,14 @@ public class Team {
     }
 
     // Worksheet: provide formatted record string
+    public String getName() {
+        return name;
+    }
+    //Method to update stats after a match
+    public String getRecord() {
+        // "Tigers: 12 points, 15 GF, 8 GA".
+        return String.format("%s: %d points, %d GF, %d GA", name, points, goalsFor, goalsAgainst);
+
     public String getRecord() {
         return String.format("%s: %d points, %d GF, %d GA", name, points, goalsFor, goalsAgainst);
     }
@@ -57,3 +66,29 @@ public class Team {
     }
 }
 
+    public void updateStats(Match m) {
+        matches.add(m);
+        points += m.homeScore + m.awayScore;
+
+        int homeScore = m.getHomeScore();
+        int awayScore = m.getAwayScore();
+
+        if (this == m.getHomeTeam()) {
+            goalsFor += homeScore;
+            goalsAgainst += awayScore;
+            if (homeScore > awayScore) {
+                points += 3;
+            } else if (homeScore == awayScore) {
+                points += 1;
+            }
+        } else if (this == m.getAwayTeam()) {
+            goalsFor += awayScore;
+            goalsAgainst += homeScore;
+            if (awayScore > homeScore) {
+                points += 3;
+            } else if (homeScore == awayScore) {
+                points += 1;
+            }
+        }
+    }
+}

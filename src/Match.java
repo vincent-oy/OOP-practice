@@ -29,6 +29,15 @@ public class Match {
     }
 
     // Worksheet: expose away team
+  
+    public Team getHomeTeam() {
+        return homeTeam;
+    // return homeTeam.name + " " + homeScore + " - " + awayScore + " " + awayTeam.name + "(" + date + ")";
+    // "Tigers 2 - 1 Eagles (12/09/2025)"
+    public toString() {
+        return String.format("%s %d - %d %s (%s)", homeTeam.name, homeScore, awayScore, awayTeam.name, date);
+    }
+
     public Team getAwayTeam() {
         return awayTeam;
     }
@@ -44,6 +53,14 @@ public class Match {
     }
 
     // Worksheet: describe match as a readable string
+    public int getHomeScore() {
+        return homeScore;
+    }
+
+    public int getAwayScore() {
+        return awayScore;
+    }
+
     @Override
     public String toString() {
         // return homeTeam.getName() + " " + homeScore + " - " + awayScore +
@@ -51,6 +68,10 @@ public class Match {
         // Example: "Tigers 2 - 1 Eagles (12/09/2025)"
         return String.format("%s %d - %d %s (%s)",
                 homeTeam.getName(), homeScore, awayScore, awayTeam.getName(), date);
+    // return homeTeam.name + " " + homeScore + " - " + awayScore + " " + awayTeam.name + "(" + date + ")";
+    // "Tigers 2 - 1 Eagles (12/09/2025)"
+    public toString() {
+        return String.format("%s %d - %d %s (%s)", homeTeam.name, homeScore, awayScore, awayTeam.name, date);
     }
 }
 
