@@ -16,9 +16,9 @@ public class Match {
         this.awayScore = awayScore;
     }
 
+    // return homeTeam.name + " " + homeScore + " - " + awayScore + " " + awayTeam.name + "(" + date + ")";
+    // "Tigers 2 - 1 Eagles (12/09/2025)"
     public toString() {
-        // return homeTeam.name + " " + homeScore + " - " + awayScore + " " + awayTeam.name + "(" + date + ")";
-        // "Tigers 2 - 1 Eagles (12/09/2025)"
         return String.format("%s %d - %d %s (%s)", homeTeam.name, homeScore, awayScore, awayTeam.name, date);
     }
 }
@@ -39,9 +39,9 @@ public class Match {
         this.awayScore = awayScore;
     }
 
+    // return homeTeam.name + " " + homeScore + " - " + awayScore + " " + awayTeam.name + "(" + date + ")";
+    // "Tigers 2 - 1 Eagles (12/09/2025)"
     public toString() {
-        // return homeTeam.name + " " + homeScore + " - " + awayScore + " " + awayTeam.name + "(" + date + ")";
-        // "Tigers 2 - 1 Eagles (12/09/2025)"
         return String.format("%s %d - %d %s (%s)", homeTeam.name, homeScore, awayScore, awayTeam.name, date);
     }
 }
